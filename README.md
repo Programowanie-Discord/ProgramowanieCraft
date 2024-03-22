@@ -6,10 +6,10 @@ Clone the project into `ProgramowanieCraft` directory.
 
 ## Run
 
-0. (Optional) Restore a backup file.
+0. (Optional) Restore a backup file. The backup file must be in a backups directory.
 
     ```sh
-    docker run --rm --volumes-from programowaniecraft-minecraftdata-1 -v /home/INSERT_BACKUPS_DIRECTORY:/backup bash -c "cd /data && tar xvf /backup INSERT_BACKUP_FILENAME.tar --strip 1"
+    docker run --rm --volumes-from programowaniecraft-minecraft-1 -v /home/INSERT_BACKUPS_DIRECTORY:/backup bash -c "cd /data && tar xvf /backup/INSERT_BACKUP_FILENAME.tar --strip 1"
     ```
 
 1. Search (`CTRL+F`) for `# FILL!!!` comments in
