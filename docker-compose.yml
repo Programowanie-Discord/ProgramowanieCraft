@@ -1,0 +1,33 @@
+version: "3"
+
+services:
+  minecraft:
+    image: itzg/minecraft-server
+    ports:
+      - 25565:25565 # minecraft
+      - 25568:25568 # dynmap
+    environment:
+      DIFFICULTY: normal
+      EULA: true
+      ICON: "https://cdn.discordapp.com/avatars/1220700277573816330/037d7503e3970212dd8e8838822c0605.png?size=64"
+      MAX_PLEYERS: 1024
+      MEMORY: 8G
+      MOTD: "Witaj na \u00A7l\u00A74ProgramowanieCraft\u00A7r!\u00A7r\n\u00A79discord.gg/INSERT_DISCORD_INVITE\u00A7r" # FILL!!!
+      ONLINE_MODE: false
+      OPS: "Kuba_Z2" # FILL!!!
+      OVERRIDE_ICON: true
+      OVERRIDE_SERVER_PROPERTIES: true
+      SEED: "-923969161156079860" # FILL!!! (or not, this one's good)
+      SERVER_NAME: "ProgramowanieCraft"
+      SPAWN_PROTECTION: 0 # FILL!!!
+      TYPE: PAPER
+    stdin_open: true
+    restart: unless-stopped
+    tty: true
+    volumes:
+      - ./plugins:/plugins
+      - minecraftdata:/data
+
+volumes:
+  minecraftdata:
+    external: true
