@@ -373,7 +373,7 @@ ChannelTopicUpdaterConsoleChannelTopicAtServerShutdownFormat: "Serwer jest offli
 # This is the message sent to players when they run "/discord". It's recommended to leave command syntax as a part of this
 # Use {INVITE} as a placeholder for the invite link people need to join the Discord server, uses DiscordInviteLink configured in config.yml
 #
-DiscordCommandFormat: '&bDołącz do nas na Discordzie: {INVITE}&b. Aby uzyskać pomoc, wpisz "/discord ?"'
+DiscordCommandFormat: '&bDołącz do nas na Discordzie: &9{INVITE}&b. Aby uzyskać pomoc, wpisz "/discord ?"'
 
 # No permission message
 NoPermissionMessage: "&cNie masz uprawnień do wykonania tej komendy."
