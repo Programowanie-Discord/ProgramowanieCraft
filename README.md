@@ -52,3 +52,4 @@ Backing up the database is possible, but the author of this project was too lazy
 - [WorldEdit](https://dev.bukkit.org/projects/worldedit/) (v7.3.0)
 - [WorldGuard](https://dev.bukkit.org/projects/worldguard) (v7.0.9)
 - [AuthMe](https://www.spigotmc.org/resources/authme-reloaded.6269/) (v5.6.0-beta2)
+- [spark](https://spark.lucko.me/) (v1.10.60)
