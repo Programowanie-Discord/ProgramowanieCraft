@@ -32,7 +32,7 @@ storage:
   #type: sqlite
   #dbfile: dynmap.db
   # MySQL DB for map storage (at 'hostname':'port' with flags "flags" in database 'database' using user 'userid' password 'password' and table prefix 'prefix')
-  type: mariadb
+  type: mysql
   hostname: ${CFG_DB_HOST}
   port: ${CFG_DB_PORT}
   database: ${CFG_DB_DATABASE}
