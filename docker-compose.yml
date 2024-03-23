@@ -16,6 +16,7 @@ services:
       CFG_DISCORD_USERS_ONLINE_CHANNEL_ID: 000000000000000000 # The channel name changes
       CFG_DISCORD_WHITELIST_BYPASS_ROLE: 830528317768990721 # Should be a server administrator
       CFG_DYNMAP_PUBLIC_URL: localhost:25568
+      ICON: "https://cdn.discordapp.com/avatars/1220700277573816330/037d7503e3970212dd8e8838822c0605.png?size=64"
       MOTD: "Witaj na \u00A7l\u00A74ProgramowanieCraft\u00A7r!\u00A7r\n\u00A79discord.gg/programowanie-819892011364122624\u00A7r"
       OPS: Kuba_Z2
       SEED: "-923969161156079860"
@@ -30,7 +31,6 @@ services:
       DIFFICULTY: normal
       ENABLE_RCON: false
       EULA: true
-      ICON: "https://cdn.discordapp.com/avatars/1220700277573816330/037d7503e3970212dd8e8838822c0605.png?size=64"
       MAX_PLEYERS: 1024
       MEMORY: 8G
       ONLINE_MODE: false
