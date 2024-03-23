@@ -14,7 +14,7 @@ Require linked account to play:
   # If you don't know what these mean, don't touch them
 
   # Minecraft IGNs to always allow whether linked or subscriber or not
-  Bypass names: [Kuba_Z2] # FILL!!!
+  Bypass names: [${CFG_DISCORD_LINK_BYPASS_NAME}]
   # Whether players on the VANILLA whitelist will bypass the need to link their accounts/have a sub role
   Whitelisted players bypass check: true
   # Whether to let players in the VANILLA banlist be able to link their accounts

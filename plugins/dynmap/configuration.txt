@@ -32,14 +32,14 @@ storage:
   #type: sqlite
   #dbfile: dynmap.db
   # MySQL DB for map storage (at 'hostname':'port' with flags "flags" in database 'database' using user 'userid' password 'password' and table prefix 'prefix')
-  #type: mysql
-  #hostname: localhost
-  #port: 3306
-  #database: dynmap
-  #userid: dynmap
-  #password: dynmap
-  #prefix: ""
-  #flags: "?allowReconnect=true&autoReconnect=true"
+  type: mariadb
+  hostname: ${CFG_DB_HOST}
+  port: ${CFG_DB_PORT}
+  database: ${CFG_DB_DATABASE}
+  userid: ${CFG_DB_USERNAME}
+  password: ${CFG_DB_PASSWORD}
+  prefix: "dm_"
+  flags: "?allowReconnect=true&autoReconnect=true"
   #
   # AWS S3 backet web site
   #type: aws_s3
@@ -510,7 +510,7 @@ soft-ref-cache: true
 
 # Published public URL for Dynmap server (allows users to use 'dynmap url' command to get public URL usable to access server
 # If not set, 'dynmap url' will not return anything.  URL should be fully qualified (e.g. https://mc.westeroscraft.com/)
-publicURL: localhost:25568 # FILL!!!
+publicURL: ${CFG_DYNMAP_PUBLIC_URL}
 
 # Send this message if the player does not have permission to use the command
 noPermissionMsg: "Nie masz uprawnień do użycia tej komendy!"

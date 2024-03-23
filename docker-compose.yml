@@ -7,27 +7,65 @@ services:
       - 25565:25565 # minecraft
       - 25568:25568 # dynmap
     environment:
+      # ===== CUSTOM CONFIG =====
+      CFG_DISCORD_CHAT_CHANNEL: 1220720732854816788
+      CFG_DISCORD_COMMAND_ROLE_ALLOWED: 819892011364122624 # Guild ID for @everyone
+      CFG_DISCORD_CONSOLE_CHANNEL: 000000000000000000
+      CFG_DISCORD_INVITE_CODE: programowanie-819892011364122624
+      CFG_DISCORD_LINK_BYPASS_NAME: Kuba_Z2
+      CFG_DISCORD_USERS_ONLINE_CHANNEL_ID: 000000000000000000 # The channel name changes
+      CFG_DISCORD_WHITELIST_BYPASS_ROLE: 830528317768990721 # Should be a server administrator
+      CFG_DYNMAP_PUBLIC_URL: localhost:25568
+      MOTD: "Witaj na \u00A7l\u00A74ProgramowanieCraft\u00A7r!\u00A7r\n\u00A79discord.gg/programowanie-819892011364122624\u00A7r"
+      OPS: Kuba_Z2
+      SEED: "-923969161156079860"
+      SPAWN_PROTECTION: 0
+      # ===== END CUSTON CONFIG =====
+      CFG_DB_DATABASE: minecraft
+      CFG_DB_HOST: database
+      CFG_DB_PASSWORD_FILE: /run/secrets/db_password
+      CFG_DB_PORT: 3306
+      CFG_DB_USERNAME: programowaniecraft
+      CFG_DISCORD_TOKEN_FILE: /run/secrests/discord_token
       DIFFICULTY: normal
+      ENABLE_RCON: false
       EULA: true
       ICON: "https://cdn.discordapp.com/avatars/1220700277573816330/037d7503e3970212dd8e8838822c0605.png?size=64"
       MAX_PLEYERS: 1024
       MEMORY: 8G
-      MOTD: "Witaj na \u00A7l\u00A74ProgramowanieCraft\u00A7r!\u00A7r\n\u00A79discord.gg/INSERT_DISCORD_INVITE\u00A7r" # FILL!!!
       ONLINE_MODE: false
-      OPS: "Kuba_Z2" # FILL!!!
       OVERRIDE_ICON: true
       OVERRIDE_SERVER_PROPERTIES: true
-      SEED: "-923969161156079860" # FILL!!! (or not, this one's good)
-      SERVER_NAME: "ProgramowanieCraft"
-      SPAWN_PROTECTION: 0 # FILL!!!
+      REPLACE_ENV_DURING_SYNC: true
+      SERVER_NAME: ProgramowanieCraft
       TYPE: PAPER
+      VERSION: 1.20.4
     stdin_open: true
     restart: unless-stopped
     tty: true
     volumes:
-      - ./plugins:/plugins
+      - ./plugins:/plugins:ro
       - minecraftdata:/data
+  database:
+    image: mariadb:lts
+    environment:
+      MARIADB_DATABASE: minecraft
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/db_passwordium
+      MARIADB_USER: programowaniecraft
+      MARIADB_PASSWORD_FILE: /run/secrets/db_password
+    restart: always
+    volumes:
+      - ./mariadb.conf.d:/etc/mysql/conf.d:ro
+      - databasedata:/var/lib/mysql
 
 volumes:
   minecraftdata:
     external: true
+  databasedata:
+    external: true
+
+secrets:
+  db_password:
+    file: ./secrets/db_password
+  discord_token:
+    file: ./secrets/discord_token

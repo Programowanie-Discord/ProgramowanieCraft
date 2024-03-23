@@ -1,0 +1,3 @@
+Witaj, {PLAYER}, na serwerze {SERVER}
+
+Ten serwer wymaga autoryzacji!

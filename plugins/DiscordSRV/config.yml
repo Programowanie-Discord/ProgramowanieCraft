@@ -6,7 +6,7 @@ ConfigVersion: 1.27.0
 
 # Bot token; don't know what this is? Look at the video on the plugin page for instructions
 # You must restart your server after changing this option
-BotToken: "INSERT_BOT_TOKEN" # FILL!!!
+BotToken: "${CFG_DISCORD_TOKEN}"
 
 # Channel links from game to Discord
 # syntax is Channels: {"in-game channel name from Minecraft": "numerical channel ID from Discord", "another in-game channel name from Minecraft": "another numerical channel ID from Discord"}
@@ -27,13 +27,13 @@ BotToken: "INSERT_BOT_TOKEN" # FILL!!!
 #
 # The first part of channel pairs is not the Discord channel name!
 # Run "/discord reload" after changing this option to apply
-Channels: { "global": "000000000000000000" } # FILL!!!
+Channels: { "global": "${CFG_DISCORD_CHAT_CHANNEL}" }
 
 # Console channel numerical ID (NOT NAME), leave blank to disable the console channel all together
-DiscordConsoleChannelId: "000000000000000000" # FILL!!!
+DiscordConsoleChannelId: "${CFG_DISCORD_CONSOLE_CHANNEL}"
 
 # Invitation link shown to players when using /discord and on the message shown to unlinked players when linking is enforced
-DiscordInviteLink: "https://discord.gg/INSERT_DISCORD_INVITE" # FILL!!!
+DiscordInviteLink: "https://discord.gg/${CFG_DISCORD_INVITE_CODE}"
 
 # Debug information
 # Don't enable these unless you're attempting to locate an issue
@@ -71,10 +71,10 @@ DebugLevel: 0
 # These features are not fully optimized; use at your own risk
 
 # JDBC (MySQL/MariaDB)
-Experiment_JdbcAccountLinkBackend: "jdbc:mysql://HOST:PORT/DATABASE?autoReconnect=true&useSSL=false"
+Experiment_JdbcAccountLinkBackend: "jdbc:mysql://${CFG_DB_HOST}:${CFG_DB_PORT}/${CFG_DB_DATABASE}?autoReconnect=true&useSSL=false"
 Experiment_JdbcTablePrefix: "discordsrv"
-Experiment_JdbcUsername: "username"
-Experiment_JdbcPassword: "password"
+Experiment_JdbcUsername: "${CFG_DB_USERNAME}"
+Experiment_JdbcPassword: "${CFG_DB_PASSWORD}"
 
 # Webhook Delivery
 Experiment_WebhookChatMessageDelivery: true
@@ -130,9 +130,9 @@ UseModernPaperChatEvent: false
 # DiscordGameStatus: Text to display. Can be a single value e.g. "Minecraft", or multiple values e.g. ["Minecraft", "yourip.changeme.com"]
 # DiscordOnlineStatus: Activity status to display. This must be one of the following: ONLINE, DND, IDLE or INVISIBLE
 # StatusUpdateRateInMinutes: How frequently to cycle the status
-DiscordGameStatus: "localhost" # FILL!!!
+DiscordGameStatus: ""
 DiscordOnlineStatus: ONLINE
-StatusUpdateRateInMinutes: 2
+StatusUpdateRateInMinutes: 0
 
 # Chat channel information
 # The chat channel is the text channel that all messages in-game will be sent to and all messages sent
@@ -168,7 +168,7 @@ DiscordChatChannelEmojiBehavior: "name"
 DiscordChatChannelEmoteBehavior: "name"
 DiscordChatChannelPrefixRequiredToProcessMessage: ""
 DiscordChatChannelPrefixActsAsBlacklist: false
-DiscordChatChannelRolesAllowedToUseColorCodesInChat: ["000000000000000000"] # FILL!!!
+DiscordChatChannelRolesAllowedToUseColorCodesInChat: []
 DiscordChatChannelBroadcastDiscordMessagesToConsole: true
 DiscordChatChannelRequireLinkedAccount: false
 DiscordChatChannelBlockBots: false
@@ -179,7 +179,7 @@ DiscordChatChannelBlockedRolesAsWhitelist: false
 DiscordChatChannelBlockedRolesIds:
   ["000000000000000000", "000000000000000000", "000000000000000000"]
 DiscordChatChannelRolesSelectionAsWhitelist: false
-DiscordChatChannelRolesSelection: ["000000000000000000", "000000000000000000"] # FILL!!!
+DiscordChatChannelRolesSelection: []
 DiscordChatChannelRoleAliases: {}
 
 # Console channel information
@@ -230,9 +230,9 @@ DiscordConsoleChannelBlockBots: true
 DiscordChatChannelConsoleCommandEnabled: true
 DiscordChatChannelConsoleCommandNotifyErrors: true
 DiscordChatChannelConsoleCommandPrefix: "!c"
-DiscordChatChannelConsoleCommandRolesAllowed: ["000000000000000000"] # FILL!!!
+DiscordChatChannelConsoleCommandRolesAllowed: ["${CFG_DISCORD_COMMAND_ROLE_ALLOWED}"]
 DiscordChatChannelConsoleCommandWhitelist: ["say", "lag", "tps"]
-DiscordChatChannelConsoleCommandWhitelistBypassRoles: ["000000000000000000"] # FILL!!!
+DiscordChatChannelConsoleCommandWhitelistBypassRoles: ["${CFG_DISCORD_WHITELIST_BYPASS_ROLES}"]
 DiscordChatChannelConsoleCommandWhitelistActsAsBlacklist: false
 DiscordChatChannelConsoleCommandExpiration: 0
 DiscordChatChannelConsoleCommandExpirationDeleteRequest: true
@@ -297,11 +297,11 @@ ChannelTopicUpdaterRateInMinutes: 10
 #     %timestamp%:      current unix timestamp
 #   UpdateInterval: Time in minutes to wait between updating the channel's name (minimum is 10 due to rate limits)
 ChannelUpdater:
-  - ChannelId: "1220718234722898000" # FILL!!!
+  - ChannelId: "${CFG_DISCORD_USERS_ONLINE_CHANNEL_ID}"
     Format: "%playercount% graczy online"
     ShutdownFormat: "Serwer jest offline"
     UpdateInterval: 10
-  - ChannelId: "0000000000000000" # You don't have to fill this one lol
+  - ChannelId: "0000000000000000"
     Format: "TPS: %tps%"
     ShutdownFormat: "Serwer jest offline"
     UpdateInterval: 10
