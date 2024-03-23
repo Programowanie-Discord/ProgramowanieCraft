@@ -27,7 +27,7 @@ deftemplatesuffix: vlowres
 #  postgres: PostgreSQL database, at hostname:port in database, accessed via userid with password
 storage:
   # Filetree storage (standard tree of image files for maps)
-  type: filetree
+  # type: filetree
   # SQLite db for map storage (uses dbfile as storage location)
   #type: sqlite
   #dbfile: dynmap.db
@@ -38,7 +38,7 @@ storage:
   database: ${CFG_DB_DATABASE}
   userid: ${CFG_DB_USERNAME}
   password: ${CFG_DB_PASSWORD}
-  prefix: "dm_"
+  prefix: "dynmap_"
   flags: "?allowReconnect=true&autoReconnect=true"
   #
   # AWS S3 backet web site

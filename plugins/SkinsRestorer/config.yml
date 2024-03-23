@@ -55,7 +55,7 @@ messages:
 # [!] If you're not using ssl, change sslMode=trust to sslMode=disable [!]
 database:
   enabled: true
-  host: ${CFG_DB_HOSTNAME}
+  host: ${CFG_DB_HOST}
   port: ${CFG_DB_PORT}
   database: ${CFG_DB_DATABASE}
   username: ${CFG_DB_USERNAME}

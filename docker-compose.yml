@@ -26,7 +26,7 @@ services:
       CFG_DB_PASSWORD_FILE: /run/secrets/db_password
       CFG_DB_PORT: 3306
       CFG_DB_USERNAME: programowaniecraft
-      CFG_DISCORD_TOKEN_FILE: /run/secrests/discord_token
+      CFG_DISCORD_TOKEN_FILE: /run/secrets/discord_token
       DIFFICULTY: normal
       ENABLE_RCON: false
       EULA: true
@@ -37,10 +37,14 @@ services:
       OVERRIDE_ICON: true
       OVERRIDE_SERVER_PROPERTIES: true
       REPLACE_ENV_DURING_SYNC: true
+      REPLACE_ENV_VARIABLES: true
       SERVER_NAME: ProgramowanieCraft
       TYPE: PAPER
       VERSION: 1.20.4
     stdin_open: true
+    secrets:
+      - db_password
+      - discord_token
     restart: unless-stopped
     tty: true
     volumes:
@@ -50,10 +54,12 @@ services:
     image: mariadb:lts
     environment:
       MARIADB_DATABASE: minecraft
-      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/db_passwordium
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/db_password
       MARIADB_USER: programowaniecraft
       MARIADB_PASSWORD_FILE: /run/secrets/db_password
     restart: always
+    secrets:
+      - db_password
     volumes:
       - ./mariadb.conf.d:/etc/mysql/conf.d:ro
       - databasedata:/var/lib/mysql
