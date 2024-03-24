@@ -21,7 +21,7 @@ services:
       OPS: Kuba_Z2
       SEED: "-923969161156079860"
       SPAWN_PROTECTION: 0
-      # ===== END CUSTON CONFIG =====
+      # ===== END CUSTOM CONFIG =====
       CFG_DB_DATABASE: minecraft
       CFG_DB_HOST: database
       CFG_DB_PASSWORD_FILE: /run/secrets/db_password
