@@ -1,3 +1,0 @@
-Witaj, {PLAYER}, na serwerze {SERVER}
-
-&bDołącz do nas na Discordzie: &9discord.gg/${CFG_DISCORD_INVITE_CODE}

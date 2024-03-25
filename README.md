@@ -22,11 +22,11 @@ Clone the project into `ProgramowanieCraft` directory.
 
 2. Open the `docker-compose.yml` file and fill out the values within the `CUSTOM CONFIG` block.
 
-3. Create `minecraftdata` and `databasedata` volumes.
+3. Create `minecraftdata` and `minecraftdbdata` volumes.
 
     ```sh
     docker volume create minecraftdata
-    docker volume create databasedata
+    docker volume create minecraftdbdata
     ```
 
 4. Run the server.
@@ -34,6 +34,8 @@ Clone the project into `ProgramowanieCraft` directory.
     ```sh
     docker-compose up -d --force-recreate
     ```
+
+    You should restart the server after the first run (`spigot.yml` cannot be patched during the first run, because it doesn't exist).
 
 ## Backup
 
@@ -43,13 +45,18 @@ Backing up the database is possible, but the author of this project was too lazy
 
 ## Plugins
 
-- [CoreProtect](https://www.spigotmc.org/resources/coreprotect.8631/) (v22.2)
-- [DiscordSRV](https://www.spigotmc.org/resources/discordsrv.18494/) (v1.27.0)
-- [dynmap](https://www.spigotmc.org/resources/dynmap.274/) (v3.7-beta-4)
-- [LuckPerms](https://www.spigotmc.org/resources/luckperms.28140/) (v5.4.121)
+- [Chunky](https://modrinth.com/plugin/chunky) (v1.3.136)
+- [CoreProtect](https://modrinth.com/plugin/coreprotect) (v22.2)
+- [DiscordSRV](https://modrinth.com/plugin/discordsrv) (v1.27.0)
+- [EpicGuard](https://modrinth.com/plugin/epicguard) (v7.6.0)
+- [FarmControl](https://modrinth.com/plugin/farmcontrol) (v1.2.5)
+- [GrimAnticheat](https://hangar.papermc.io/GrimAnticheat/GrimAnticheat) (v2.3.61)
+- [Insights](https://modrinth.com/plugin/insights) (v6.17.2)
+- [LibreLogin](https://modrinth.com/plugin/libre-login) (v0.19.1)
+- [LuckPerms](https://luckperms.net) (v5.4.121)
+- [Pl3xMap](https://modrinth.com/plugin/pl3xmap) (v1.20.4-484)
 - [SkinsRestorer](https://www.spigotmc.org/resources/skinsrestorer.2124/) (v15.0.7)
-- [Vault](https://www.spigotmc.org/resources/vault.34315/) (v1.7.3)
-- [WorldEdit](https://dev.bukkit.org/projects/worldedit/) (v7.3.0)
-- [WorldGuard](https://dev.bukkit.org/projects/worldguard) (v7.0.9)
-- [AuthMe](https://www.spigotmc.org/resources/authme-reloaded.6269/) (v5.6.0-beta2)
 - [spark](https://spark.lucko.me/) (v1.10.60)
+- [Vault](https://www.spigotmc.org/resources/vault.34315/) (v1.7.3)
+- [WorldEdit](https://modrinth.com/plugin/worldedit) (v7.3.0)
+- [WorldGuard](https://enginehub.org/worldguard) (v7.0.9)

@@ -6,23 +6,23 @@
 
 # Whether to enable the proximity voice chat feature of DiscordSRV
 # You must restart your server after changing this option
-Voice enabled: false
+Voice enabled: ${CFG_DISCORD_VOICE_ENABLED}
 # Amount of ticks between network updates
 Tick speed: 5
 # The main category that the voice module will create/delete/move voice channels in
 # No channels other than the lobby channel (below) should be in this category
-Voice category: 000000000000000000
+Voice category: ${CFG_DISCORD_VOICE_CATEGORY}
 # The lobby channel (inside the voice category) that people will be moved to
 # when they are not in range of any networks. This is also the channel people will
 # join to be connected to the proximity voice network.
-Lobby channel: 000000000000000000
+Lobby channel: ${CFG_DISCORD_VOICE_LOBBY_CHANNEL}
 # Mutes users in the lobby who have the Speak and Mute Others permissions in the lobby
 Mute users who bypass speak permissions in the lobby: true
 
 Network:
   # Maximum distance between players in order to be connected
-  Vertical Strength: 40
-  Horizontal Strength: 80
+  Vertical Strength: 32
+  Horizontal Strength: 96
   # Once a player has joined a network, they can be
   # strength + falloff blocks away before being disconnected
   Falloff: 5

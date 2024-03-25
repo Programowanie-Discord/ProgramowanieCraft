@@ -1,0 +1,26 @@
+{
+  "file": "/data/spigot.yml",
+  "ops": [
+    {
+      "$put": {
+        "path": "$.settings",
+        "key": "moved-wrongly-threshold",
+        "value": 2.0
+      }
+    },
+    {
+      "$put": {
+        "path": "$.settings",
+        "key": "moved-too-quickly-multiplier",
+        "value": 32.0
+      }
+    },
+    {
+      "$put": {
+        "path": "world-settings.default.entity-tracking-range",
+        "key": "players",
+        "value": 96
+      }
+    }
+  ]
+}

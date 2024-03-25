@@ -426,7 +426,7 @@ ServerWatchdogMessage: "<t:%timestamp%:R> %guildowner%, serwer nie wykonał tick
 # MinecraftNobodyFound:         %target%:       the input that led to no results being found
 #
 # Discord
-UnknownCode: "Nie znam takiego kodu, spróbuj ponownie."
+UnknownCode: "Ten kod nie istnieje. Spróbuj ponownie."
 InvalidCode: "Czy jesteś pewien, że to jest Twój kod? Kody linkujące mają długość 4 cyfr."
 DiscordAccountLinked: "Twoje konto Discord zostało połączone z %name% (%uuid%)"
 DiscordAccountAlreadyLinked: "Jesteś już połączony z %username% (%uuid%)"

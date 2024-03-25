@@ -1,0 +1,65 @@
+{
+  "format": "png",
+  "maxPlayers": 20,
+  "lang": {
+    "title": "Pl3xMap",
+    "langFile": "pl_pl.json",
+    "blockInfo": {
+      "value": "<block><br /><biome>",
+      "label": "Informacje o bloku"
+    },
+    "coords": { "value": "<x>, <y>, <z>", "label": "Współrzędne" },
+    "layers": {
+      "value": "Nie skonfigurowano żadnych warstw",
+      "label": "Warstwy"
+    },
+    "link": { "value": "", "label": "Udostępnialny link" },
+    "markers": {
+      "value": "Nie skonfigurowano żadnych znaczników",
+      "label": "Znaczniki"
+    },
+    "players": {
+      "value": "Obecnie nie ma żadnych graczy online",
+      "label": "Gracze (<online>/<max>)"
+    },
+    "worlds": {
+      "value": "Nie skonfigurowano żadnych światów",
+      "label": "Światy"
+    }
+  },
+  "zoom": { "snap": 0.25, "delta": 0.25, "wheel": 120 },
+  "players": [],
+  "worldSettings": [
+    {
+      "name": "world",
+      "displayName": "Overworld",
+      "type": "overworld",
+      "order": 0,
+      "renderers": [
+        {
+          "value": "VintageStory",
+          "label": "vintage_story",
+          "icon": "overworld_basic"
+        }
+      ]
+    },
+    {
+      "name": "world_nether",
+      "displayName": "The Nether",
+      "type": "nether",
+      "order": 1,
+      "renderers": [
+        { "value": "Basic", "label": "basic", "icon": "nether_basic" }
+      ]
+    },
+    {
+      "name": "world_the_end",
+      "displayName": "The End",
+      "type": "the_end",
+      "order": 2,
+      "renderers": [
+        { "value": "Basic", "label": "basic", "icon": "the_end_basic" }
+      ]
+    }
+  ]
+}

@@ -5,7 +5,7 @@ services:
     image: itzg/minecraft-server
     ports:
       - 25565:25565 # minecraft
-      - 25568:25568 # dynmap
+      - 8080:8080 # map
     environment:
       # ===== CUSTOM CONFIG =====
       CFG_DISCORD_CHAT_CHANNEL: 1220720732854816788
@@ -15,10 +15,15 @@ services:
       CFG_DISCORD_LINK_BYPASS_NAME: Kuba_Z2
       CFG_DISCORD_USERS_ONLINE_CHANNEL_ID: 000000000000000000 # The channel name changes
       CFG_DISCORD_WHITELIST_BYPASS_ROLE: 830528317768990721 # Should be a server administrator
-      CFG_DYNMAP_PUBLIC_URL: localhost:25568
+      CFG_DISCORD_VOICE_ENABLED: true
+      CFG_DISCORD_VOICE_CATEGORY: 000000000000000000
+      CFG_DISCORD_VOICE_LOBBY_CHANNEL: 000000000000000000
+      CFG_MAP_WEB_ADDRESS: "http://localhost:8080"
       ICON: "https://cdn.discordapp.com/avatars/1220700277573816330/037d7503e3970212dd8e8838822c0605.png?size=64"
       MOTD: "Witaj na \u00A7l\u00A74ProgramowanieCraft\u00A7r!\u00A7r\n\u00A79discord.gg/programowanie-819892011364122624\u00A7r"
-      OPS: Kuba_Z2
+      OPS: |
+        Kuba_Z2
+        jedrek_0429
       SEED: "-923969161156079860"
       SPAWN_PROTECTION: 0
       # ===== END CUSTOM CONFIG =====
@@ -36,6 +41,7 @@ services:
       ONLINE_MODE: false
       OVERRIDE_ICON: true
       OVERRIDE_SERVER_PROPERTIES: true
+      PATCH_DEFINITIONS: /config-patches
       REPLACE_ENV_DURING_SYNC: true
       REPLACE_ENV_VARIABLES: true
       SERVER_NAME: ProgramowanieCraft
@@ -48,7 +54,9 @@ services:
     restart: unless-stopped
     tty: true
     volumes:
+      - ./config:/config:ro
       - ./plugins:/plugins:ro
+      - ./config-patches:/config-patches:ro
       - minecraftdata:/data
   database:
     image: mariadb:lts
@@ -62,12 +70,12 @@ services:
       - db_password
     volumes:
       - ./mariadb.conf.d:/etc/mysql/conf.d:ro
-      - databasedata:/var/lib/mysql
+      - minecraftdbdata:/var/lib/mysql
 
 volumes:
   minecraftdata:
     external: true
-  databasedata:
+  minecraftdbdata:
     external: true
 
 secrets:
