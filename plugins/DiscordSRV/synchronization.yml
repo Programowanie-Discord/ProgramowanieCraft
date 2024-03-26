@@ -33,8 +33,7 @@ NicknameSynchronizationFormat: "%displayname%"
 # GroupRoleSynchronizationCycleTime: amount of minutes between repeatedly triggering synchronization for all online players
 # GroupRoleSynchronizationCycleCompletely: whether synchronizations running on a timer should synchronize every member in the bots Discord servers
 #
-GroupRoleSynchronizationGroupsAndRolesToSync:
-  { "administrator": "000000000000000000" }
+GroupRoleSynchronizationGroupsAndRolesToSync: {}
 GroupRoleSynchronizationMinecraftIsAuthoritative: true
 GroupRoleSynchronizationOneWay: true
 GroupRoleSynchronizationEnableDenyPermission: false
@@ -50,6 +49,6 @@ GroupRoleSynchronizationCycleCompletely: false
 # BanSynchronizationDiscordToMinecraftReason: the message to be used as the ban reason for banning players from the Minecraft server
 # BanSynchronizationMinecraftToDiscord: whether to ban people on the Discord server if they get banned from the Minecraft server
 #
-BanSynchronizationDiscordToMinecraft: false
+BanSynchronizationDiscordToMinecraft: true
 BanSynchronizationDiscordToMinecraftReason: "&cZostałeś zbanowany na czas nieokreślony z serwera, ponieważ zostałeś zbanowany na naszym serwerze Discord."
 BanSynchronizationMinecraftToDiscord: false
