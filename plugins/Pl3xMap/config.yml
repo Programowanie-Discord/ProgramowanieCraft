@@ -16,7 +16,7 @@ settings:
     # the website files on startup. (Good for servers that
     # customize these files)
     # Note: Be sure this is false when upgrading.
-    read-only: false
+    read-only: true
     # The image format for tile images.
     # Built in types: bmp, gif, jpg, jpeg, png
     tile-format: png
