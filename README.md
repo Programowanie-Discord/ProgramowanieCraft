@@ -52,7 +52,7 @@ Backing up the database is possible, but the author of this project was too lazy
 - [FarmControl](https://modrinth.com/plugin/farmcontrol) (v1.2.5)
 - [GrimAnticheat](https://hangar.papermc.io/GrimAnticheat/GrimAnticheat) (v2.3.61)
 - [Insights](https://modrinth.com/plugin/insights) (v6.17.2)
-- [LibreLogin](https://modrinth.com/plugin/libre-login) (v0.19.1)
+- [LibreLogin](https://modrinth.com/plugin/libre-login) (v0.19.3)
 - [LuckPerms](https://luckperms.net) (v5.4.121)
 - [Pl3xMap](https://modrinth.com/plugin/pl3xmap) (v1.20.4-484)
 - [SkinsRestorer](https://www.spigotmc.org/resources/skinsrestorer.2124/) (v15.0.7)
