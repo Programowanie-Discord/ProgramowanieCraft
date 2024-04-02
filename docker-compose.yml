@@ -34,7 +34,7 @@ services:
       DIFFICULTY: normal
       ENABLE_RCON: "false"
       EULA: "true"
-      MAX_PLEYERS: 1024
+      MAX_PLAYERS: 1024
       MEMORY: 8G
       ONLINE_MODE: "false"
       OVERRIDE_ICON: "true"
