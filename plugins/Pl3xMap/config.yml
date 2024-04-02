@@ -52,7 +52,7 @@ settings:
     bind: 0.0.0.0
     # The port the built-in web server listens to.
     # Make sure the port is allocated if using Pterodactyl.
-    port: 8080
+    port: ${CFG_MAP_INTERNAL_WEBSERVER_PORT}
     # Allows the built-in web server to follow symlinks.
     # It is generally advised against enabling this,
     # for security reasons. But you do you, boo boo.

@@ -3,7 +3,6 @@ services:
     image: itzg/minecraft-server
     ports:
       - 25565:25565 # minecraft
-      - 8080:8080 # map
     environment:
       # ===== CUSTOM CONFIG =====
       CFG_DISCORD_CHAT_CHANNEL: 1220720732854816788
@@ -16,7 +15,8 @@ services:
       CFG_DISCORD_VOICE_ENABLED: "true"
       CFG_DISCORD_VOICE_CATEGORY: 000000000000000000
       CFG_DISCORD_VOICE_LOBBY_CHANNEL: 000000000000000000
-      CFG_MAP_WEB_ADDRESS: "http://localhost:8080"
+      CFG_MAP_WEB_ADDRESS: "https://example.com"
+      CFG_MAP_INTERNAL_WEBSERVER_PORT: 80
       ICON: "https://cdn.discordapp.com/avatars/1220700277573816330/037d7503e3970212dd8e8838822c0605.png?size=64"
       MOTD: "Witaj na \u00A7l\u00A74ProgramowanieCraft\u00A7r!\u00A7r\n\u00A79discord.gg/programowanie-819892011364122624\u00A7r"
       OPS: |
@@ -56,6 +56,7 @@ services:
       - ./plugins:/plugins:ro
       - ./config-patches:/config-patches:ro
       - minecraftdata:/data
+
   database:
     image: mariadb:lts
     environment:
@@ -70,6 +71,24 @@ services:
       - ./mariadb.conf.d:/etc/mysql/conf.d:ro
       - minecraftdbdata:/var/lib/mysql
 
+  map:
+    image: nginx:latest
+    ports:
+      - 443:443
+      - 80:80
+    volumes:
+      - ./map/conf/:/etc/nginx/conf.d/:ro
+      - ./map/certbot/www/:/var/www/certbot/:ro
+      - ./map/certbot/conf/:/etc/nginx/ssl/:ro
+    depends_on:
+      - minecraft
+
+  certbot:
+    image: certbot/certbot:latest
+    volumes:
+      - ./map/certbot/www/:/var/www/certbot/:rw
+      - ./map/certbot/conf/:/etc/letsencrypt/:rw
+      
 volumes:
   minecraftdata:
     external: "true"
